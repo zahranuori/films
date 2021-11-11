@@ -17,8 +17,7 @@ const Titles = [
   "The Lion King",
   "Mad Max: Fury Road",
   "Aquaman",
-  "Mission Impossible",
-];
+  "Mission Impossible",];
 const Ratings = [8.4, 8.8, 8.3, 7.3, 8.1, 7.4, 8.1, 7.8];
 const ReleaseDates = [
   "FRI 26 APR",
@@ -28,8 +27,7 @@ const ReleaseDates = [
   "SUN 8 SEPT",
   "TUE 8 JULY",
   "EWD 16 AUG",
-  "MON 16 OCT",
-];
+  "MON 16 OCT",];
 const Durations = [
   "3HR 1MIN",
   "2HR 45MIN",
@@ -38,8 +36,7 @@ const Durations = [
   "3HR 1MIN",
   "2HR 45MIN",
   "2HR 36MIN",
-  "2HR 15MIN",
-];
+  "2HR 15MIN",];
 const IMGs = [
   "1.jpg",
   "2.jpg",
@@ -48,8 +45,7 @@ const IMGs = [
   "5.jpg",
   "6.jpg",
   "7.jpg",
-  "8.jpg",
-];
+  "8.jpg",];
 
 window.onload = () => {
   let Parent = document.getElementsByClassName("main-container")[0];
@@ -67,8 +63,7 @@ window.onload = () => {
       Movies[i].Rating,
       Movies[i].ReleaseDate,
       Movies[i].Duration,
-      Parent
-    );
+      Parent);
   }
 };
 
@@ -88,22 +83,4 @@ function CreateCard(Imag, Titl, Ratin, Dat, Duratio, ParentElement) {
     Duratio +
     "</div></div></div>";
   ParentElement.appendChild(Container);
-}
-function search() {
-  let Criteria = document.querySelector(".search").value;
-  SearchResults = Movies.filter((movie) =>
-    movie.Title.toLowerCase().includes(Criteria.toLowerCase())
-  );
-  let parent = document.getElementsByClassName("main-container")[0];
-  parent.innerHTML = "";
-  SearchResults.forEach((movie) =>
-    CreateCard(
-      movie.IMG,
-      movie.Title,
-      movie.Rating,
-      movie.ReleaseDate,
-      movie.Duration,
-      parent
-    )
-  );
 }
