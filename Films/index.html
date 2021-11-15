@@ -5,12 +5,16 @@
   </head>
   <body>
     <header>
-      <input
+      <input id="searchbar"
         type="search"
         onsearch="search()"
+        onkeyup="searchFilm()"
         class="search"
         placeholder="Search..."
       />
+
+<!--      <input id="searchbar" onkeyup="searchFilm()" type="text"-->
+<!--             name="search" placeholder="Search ...">-->
 <!--      <img class="search-icon" src="resources/search.png" />-->
       <p class="sign">signUp</p>
     </header>

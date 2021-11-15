@@ -84,3 +84,44 @@ function CreateCard(Imag, Titl, Ratin, Dat, Duratio, ParentElement) {
     "</div></div></div>";
   ParentElement.appendChild(Container);
 }
+function searchFilm() {
+  let Criteria = document.querySelector(".search").value;
+  SearchResults = Movies.filter((movie) =>
+    movie.Title.toLowerCase().includes(Criteria.toLowerCase())
+  );
+  let parent = document.getElementsByClassName("main-container")[0];
+  parent.innerHTML = "";
+  SearchResults.forEach((movie) =>
+    CreateCard(
+      movie.IMG,
+      movie.Title,
+      movie.Rating,
+      movie.ReleaseDate,
+      movie.Duration,
+      parent
+    )
+  );
+}
+// function Search(element) {
+//   const searchTerm = element.value;
+//   const filteredCards = cardsInfo.filter(card => {
+//     return card.title.includes(searchTerm) || card.description.includes(searchTerm)
+//   })
+//
+//   cardContainer.innerHTML = generateCards(filteredCards)
+// }
+
+// function searchFilm() {
+//   let input = document.getElementById('searchbar').value
+//   input=input.toLowerCase();
+//   let x = document.getElementsByClassName('main-container');
+//
+//   for (let i = 0; i < x.length; i++) {
+//     if (!x[i].innerHTML.toLowerCase().includes(input)) {
+//       x[i].style.display="none";
+//     }
+//     else {
+//       x[i].style.display="list-item";
+//     }
+//   }
+// }
